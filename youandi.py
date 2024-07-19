@@ -15,7 +15,7 @@ lyrics = [
     ("we can see 🌟", 0.05),
 ]
 
-delays = [1.5, 0.9, 5.1, 0.5, 0.5, 0.8, 0.5, 0.5, 0.5, 0.5]
+delay = [1.5, 0.9, 5.1, 0.5, 0.5, 0.8, 0.5, 0.5, 0.5, 0.5]
 
 def animate_text(text, char_delay):
     for char in text:
@@ -29,7 +29,7 @@ def main():
     for i, (text, char_delay) in enumerate(lyrics):
         animate_text(text, char_delay)
         if i < len(lyrics) - 1:
-            next_line_delay = max(0, delays[i % len(delays)] - len(text) * char_delay)
+            next_line_delay = max(0, delay[i % len(delay)] - len(text) * char_delay)
             time.sleep(next_line_delay)
 
 if __name__ == "__main__":
